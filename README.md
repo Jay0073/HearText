@@ -1,2 +1,2 @@
 # HearText
-tts chrome extensiob
+tts chrome extension
