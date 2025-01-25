@@ -1,21 +1,26 @@
 {
   "manifest_version": 3,
-  "name": "Floating Speak Button",
-  "version": "1.0",
-  "description": "Adds a floating speak button",
-  "permissions": [
-    "activeTab",
-    "scripting",
-    "tts"
-  ],
+  "name": "Quick TTS Enhanced",
+  "version": "1.1",
+  "description": "Convert selected text to speech with advanced controls.",
+  "permissions": ["scripting", "activeTab", "storage"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
       "js": ["content.js"],
-      "css": ["styles.css"]
+      "css": ["style.css"]
     }
   ],
-    "background": {
-        "service_worker": "background.js"
+  "icons": {
+    "48": "icons/main-icon.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/icon-play.png", "icons/icon-pause.png", "icons/main-icon.png"],
+      "matches": ["<all_urls>"]
     }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
 }

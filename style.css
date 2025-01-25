@@ -1,0 +1,20 @@
+/* style.css */
+
+/* Floating button transitions */
+#tts-button {
+    transition: transform 0.2s;
+  }
+  
+  #tts-button:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Popup transitions */
+  #tts-popup {
+    transition: opacity 0.3s;
+  }
+  
+  #tts-popup iframe {
+    border-radius: 8px;
+  }
+  
