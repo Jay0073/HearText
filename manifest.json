@@ -16,7 +16,7 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["icons/icon-play.png", "icons/icon-pause.png", "icons/main-icon.png"],
+      "resources": ["icons/icon-play.png", "icons/icon-pause.png", "icons/main-icon.png", "icons/audio-wave.gif"],
       "matches": ["<all_urls>"]
     }
   ],
