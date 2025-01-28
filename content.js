@@ -38,9 +38,10 @@ style.textContent = `
 }
 
 .control-group {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
+
 }
 
 .control-group select {
@@ -52,11 +53,23 @@ style.textContent = `
   color: var(--text-color);
 }
 
+.control-group-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10px;
+}
 
+.control-group-2 .middle {
+  width: 76%
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
 .range-slider {
 border:2px solid;
-  width: 85%;
+  width: 100%;
   height: 8px;
   background: var(--slider-background);
   outline: none;
@@ -88,11 +101,11 @@ border:2px solid;
 }
 
 #speak-button {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 44px;
   background-color: #007BFF;
   background-image: url('${chrome.runtime.getURL("icons/icon-play.png")}');
-  background-size: 80%;
+  background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
   border: none;
@@ -106,27 +119,25 @@ border:2px solid;
 }
 
 .audio-wave {
-border:2px solid;
   width: 100%;
   height: 4vh;
   visibility: hidden; 
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
+
 }
 
 .audio-wave .wave {
-border:2px solid;
   height: 20px;
   width: 40px;
+  display: inline-block;
   background-image: url('${chrome.runtime.getURL("icons/audio-wave.gif")}');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
 }
 
 hr {
-  width: 70%;
+  width: 76%;
   height: 2px;
   margin: 0 auto;
   background: rgb(147, 39, 223);
@@ -172,13 +183,14 @@ popup.innerHTML = `
     <select id="voices"></select>
   </div>
 
-  <div class="control-group"> 
+  <div class="control-group-2"> 
     <button id="speak-button"></button>
 
     <div class="middle">
       <input type="range" id="rate" class="range-slider" min="0.8" max="1.4" step="0.04" value="1">
   
       <div class="audio-wave">
+      <div> 
         <span class="wave"></span>
         <span class="wave"></span>
         <span class="wave"></span>
