@@ -119,25 +119,51 @@ border:2px solid;
 }
 
 .audio-wave {
-  width: 100%;
+  width: 125%;
   height: 4vh;
   visibility: hidden; 
-
 }
 
 .audio-wave .wave {
   height: 20px;
   width: 40px;
+  margin-top: 5px;
   display: inline-block;
   background-image: url('${chrome.runtime.getURL("icons/audio-wave.gif")}');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
 }
 
+.audio-wave :first-child {
+  position: relative;
+  left: 38px;
+  top: 4px;
+}
+.audio-wave :nth-child(2) {
+  position: relative;
+  left: 6px;
+  top: 4px;
+}
+.audio-wave :nth-child(3) {
+  position: relative;
+  right: 1px;
+  top: 4px;
+}
+.audio-wave :nth-child(4) {
+  position: relative;
+  right: 26px;
+  top: 4px;
+}
+.audio-wave :nth-child(5) {
+  position: relative;
+  right: 39px;
+  top: 4px;
+}
+
+
 hr {
-  width: 76%;
+  width: 64%;
   height: 2px;
   margin: 0 auto;
   background: rgb(147, 39, 223);
@@ -190,13 +216,13 @@ popup.innerHTML = `
       <input type="range" id="rate" class="range-slider" min="0.8" max="1.4" step="0.04" value="1">
   
       <div class="audio-wave">
-      <div> 
+      
+        <span class="wave"></span>
         <span class="wave"></span>
         <span class="wave"></span>
         <span class="wave"></span>
         <span class="wave"></span>
         <hr style="visibility: visible"/>
-      </div>
     </div>
   </div>
 `;
