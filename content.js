@@ -61,7 +61,7 @@ style.textContent = `
 }
 
 .control-group-2 .middle {
-  width: 76%
+  width: 76%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -264,10 +264,16 @@ voicesSelect.addEventListener("change", () => {
 // Handle speak button
 const speakButton = document.getElementById("speak-button");
 const audioWave = document.querySelector(".audio-wave");
+
 speakButton.addEventListener("click", () => {
-  if (isSpeaking) {
-    speechSynthesis.cancel();
-    toggleSpeaking(false);
+  if (isSpeaking && !isPaused) {
+    // Pause speech
+    speechSynthesis.pause();
+    togglePaused(true);
+  } else if (isSpeaking && isPaused) {
+    // Resume speech
+    speechSynthesis.resume();
+    togglePaused(false);
   } else {
     const selectedText = window.getSelection().toString();
     if (selectedText) {
@@ -279,10 +285,12 @@ speakButton.addEventListener("click", () => {
 
       utterance.onend = () => {
         toggleSpeaking(false);
+        togglePaused(false);
       };
 
       utterance.onerror = () => {
         toggleSpeaking(false);
+        togglePaused(false);
         alert("An error occurred during speech synthesis.");
       };
     } else {
@@ -294,10 +302,18 @@ speakButton.addEventListener("click", () => {
 // Toggle speaking state
 function toggleSpeaking(state) {
   isSpeaking = state;
+  isPaused = false;
   speakButton.style.backgroundImage = isSpeaking
     ? `url('${chrome.runtime.getURL("icons/icon-pause.png")}')`
     : `url('${chrome.runtime.getURL("icons/icon-play.png")}')`;
   audioWave.style.visibility = isSpeaking ? "visible" : "hidden"; // Show/hide audio wave
+}
+
+function togglePaused(state) {
+  isPaused = state;
+  speakButton.style.backgroundImage = isPaused
+    ? `url('${chrome.runtime.getURL("icons/icon-play.png")}')`
+    : `url('${chrome.runtime.getURL("icons/icon-pause.png")}')`;
 }
 
 // Toggle popup visibility
