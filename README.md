@@ -32,26 +32,28 @@ This Chrome extension allows users to translate selected text into speech and cu
 1. Open Google Chrome.
 2. Go to `chrome://extensions/`
 3. Enable "Developer mode" by toggling the switch in the top right corner.
-   <img src="readmefiles/screenshot3.png" width="300" alt="Voice Selection Screenshot" />
-4. Click on the "Load unpacked" button.
-   <img src="readmefiles/screenshot4.png" width="300" alt="Voice Selection Screenshot" />
-5. Select the directory where your cloned repository is located.
+      <img src="readmefiles/screenshot3.png" width="800" alt="Voice Selection Screenshot" />
+
+5. Click on the "Load unpacked" button.
+      <img src="readmefiles/screenshot4.png" width="800" alt="Voice Selection Screenshot" />
+
+7. Select the directory where your cloned repository is located.
 
 ## How to use the extension
 
 1. After loading the extension, you will see a small button in the bottom right corner of your browser.
 2. **Selecting Text**: Highlight any text on a webpage that you wish to be read aloud.
-   <video width="300" controls>
-   <source src="https://user-images.githubusercontent.com/126239/151127893-5c98ba8d-c431-4a25-bb1f-e0b33645a2b6.mp4" type="video/mp4">
-   Your browser does not support the video tag.
-   </video>
-3. **Open Controls**: Click the floating button to open the TTS controls popup.
+   
+   <video controls src="https://github.com/user-attachments/assets/61dca9b3-8c24-4e51-b572-b65c608202f1"> </video>
+4. **Open Controls**: Click the floating button to open the TTS controls popup.
+
    <img src="readmefiles/screenshot2.png" width="300" alt="Voice Selection Screenshot" />
-4. **Choose Voice**: Select your preferred voice from the dropdown list.
+6. **Choose Voice**: Select your preferred voice from the dropdown list.
+
    <img src="readmefiles/screenshot1.png" width="300" alt="Voice Selection Screenshot"/>
-5. **Adjust Speech Rate**: Use the slider to set your desired speech rate.
-6. **Play Text**: Click the play button to start reading the selected text.
-7. **Pause/Resume**: Click the play button again to pause or resume playback.
+8. **Adjust Speech Rate**: Use the slider to set your desired speech rate.
+9. **Play Text**: Click the play button to start reading the selected text.
+10. **Pause/Resume**: Click the play button again to pause or resume playback.
 
 ## Unloading the extension
 
